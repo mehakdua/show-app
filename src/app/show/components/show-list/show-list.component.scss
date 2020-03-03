@@ -1,0 +1,90 @@
+$pad:767px;
+$tab:768px;
+$lap:992px;
+
+.parent-wrapper{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-top: 10px;
+    @media screen and (min-width:$lap) {
+        grid-template-columns: 1fr 4fr ;
+    }
+    .filter-wrapper{
+        .filter{
+            border: solid 1px black;
+            padding: 5px;
+            margin:5px;
+            h3{
+                margin: 5px;
+            }
+        }
+    }
+    .show-wrapper{
+        .selected-filter{
+            li{
+                display: inline-block;
+                padding: 5px;
+                margin: 5px;
+                background: gray;
+                color: white;
+            }
+        }
+        .search-sort{
+            display: grid;
+            grid-template-columns: 1fr;
+            @media screen and (min-width:$lap) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .search-box{
+                margin: 5px;
+            }
+            select{
+                width: 100%;
+                margin: 5px;
+            }
+        }
+     
+        .show-list{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            @media screen and (min-width:$lap) {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            table{
+                border-collapse: collapse;
+                padding: 10px;
+                margin: 5px;
+                background: grey;
+                color: white;
+                tr:first-child{
+                    border: none;
+                    td{
+                        width:auto;
+                        
+                        height: 100px;
+                        
+                        >img{
+                            height: 100%;
+                            width: 100%;
+                        }
+            
+                    }
+                } 
+                tr {
+                    border-bottom: solid 1px white;
+                    td {
+                        padding: 15px;
+                    }
+                    .value{
+                        color:rgb(255, 174, 0);
+                    }
+                }
+            }
+        }
+        
+    }
+    
+}
+
+

@@ -1,0 +1,74 @@
+<div class="parent-wrapper">
+    <div class='filter-wrapper'>
+        Filters:
+    <div class="filter">
+        <h3>Species</h3>
+        <div *ngFor="let s of species;let i=index" >
+            <input type="checkbox"  (change)="onChange(speciesChecked,s, $event.target.checked)" [checked]="true"> {{s}}<br>
+        </div>
+    </div>
+    <div class="filter">
+        <h3>Genders</h3>
+        <div *ngFor="let g of genders;let i=index" >
+            <input type="checkbox"  (change)="onChange(gendersChecked,g, $event.target.checked)" [checked]="true"> {{g}}<br>
+    </div>
+    </div>
+
+    <div class="filter">
+        <h3>Origins</h3>
+        <div *ngFor="let o of origins;let i=index" >
+            <input type="checkbox"  (change)="onChange(originChecked,o, $event.target.checked)" [checked]="true"> {{o}}<br>
+    </div>
+    </div>
+    </div>
+    <div class="show-wrapper">
+        Selected Filters:
+        <ul class="selected-filter"><li  *ngFor="let f of filters;let i=index">{{f}} x</li></ul> 
+        <div class="search-sort">
+            <div class="search-box">
+                <label> Search By Name:</label>
+                <input type="textbox" name="search" [(ngModel)]="searchText"/>
+            </div>
+            <div>
+                <select>
+                    <option>Sort By Id</option>
+                </select>
+                <select  [(ngModel)]="selectedOrder" >
+                    <option [value]="'asc'">Ascending</option>
+                    <option [value]="'desc'">Descending</option>
+                </select>
+            </div>
+        </div>
+        <div class="show-list">
+            <table  *ngFor="let show of shows|myfilter:gendersChecked:speciesChecked:originChecked|mysearch:searchText|sort:'id':selectedOrder">
+                <tr>
+                    <td class="character" colspan="2"><img src="{{show.image}}"/></td>
+                </tr>
+                <tr><td colspan="2"><h3>{{show.name}}</h3></td></tr>
+                <tr><td colspan="2">Id: {{show.id}}</td></tr>   
+                <tr>
+                    <td>STATUS</td>
+                    <td class="value">{{show.status}}</td>
+                </tr>
+                <tr>
+                    <td>SPECIES</td>
+                    <td class="value">{{show.species}}</td>
+                </tr>
+                <tr>
+                    <td>GENDER</td>
+                    <td class="value">{{show.gender}}</td>
+                </tr>
+                <tr>
+                    <td>ORIGIN</td>
+                    <td class="value">{{show.origin.name}}</td>
+                </tr>
+                <tr>
+                    <td>LAST LOCATION</td>
+                    <td class="value">{{show.location.name}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+
