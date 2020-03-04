@@ -6,7 +6,7 @@ $lap:992px;
     display: grid;
     grid-template-columns: 1fr;
     padding-top: 10px;
-    @media screen and (min-width:$lap) {
+    @media screen and (min-width:$tab) {
         grid-template-columns: 1fr 4fr ;
     }
     .filter-wrapper{
@@ -46,7 +46,7 @@ $lap:992px;
         .search-sort{
             display: grid;
             grid-template-columns: 1fr;
-            @media screen and (min-width:$lap) {
+            @media screen and (min-width:$tab) {
                 grid-template-columns: repeat(2, 1fr);
             }
             .search-box{
@@ -57,19 +57,27 @@ $lap:992px;
                     margin-left: 5px;
                 }
             }
-            select{
-                width: 100%;
-                margin: 5px;
-                padding: 3px;
-                border-radius: 5px;
+            .sort-box{
+                @media screen and (min-width:$tab) {
+                    justify-self: end;
+                    width: 200px;
+                }
+                
+                select{
+                    width: 100%;
+                    margin: 5px;
+                    padding: 3px;
+                    border-radius: 5px;
+                }
             }
+           
         }
      
         .show-list{
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             background: #e8a87c;
-            @media screen and (min-width:$lap) {
+            @media screen and (min-width:$tab) {
                 grid-template-columns: repeat(4, 1fr);
             }
             table{
