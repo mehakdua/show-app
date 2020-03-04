@@ -3,22 +3,22 @@
         <h3>Filters</h3>
     <div class="filter">
         <h3>Species</h3>
-        <div *ngFor="let s of species;let i=index" >
-            <input type="checkbox"  (change)="onChange(speciesChecked,s, $event.target.checked)" [checked]="true"> {{s}}<br>
-        </div>
+        <ul>
+            <li *ngFor="let s of species;let i=index"><input type="checkbox"  (change)="onChange(speciesChecked,s, $event.target.checked)" [checked]="true"> {{s}}</li>
+        </ul>
     </div>
     <div class="filter">
         <h3>Genders</h3>
-        <div *ngFor="let g of genders;let i=index" >
-            <input type="checkbox"  (change)="onChange(gendersChecked,g, $event.target.checked)" [checked]="true"> {{g}}<br>
-    </div>
+        <ul>
+            <li *ngFor="let g of genders;let i=index" ><input type="checkbox"  (change)="onChange(gendersChecked,g, $event.target.checked)" [checked]="true"> {{g}}</li>
+        </ul>
     </div>
 
     <div class="filter">
         <h3>Origins</h3>
-        <div *ngFor="let o of origins;let i=index" >
-            <input type="checkbox"  (change)="onChange(originChecked,o, $event.target.checked)" [checked]="true"> {{o}}<br>
-    </div>
+        <ul>
+            <li *ngFor="let o of origins;let i=index" ><input type="checkbox"  (change)="onChange(originChecked,o, $event.target.checked)" [checked]="true"> {{o}}</li>
+        </ul>
     </div>
     </div>
     <div class="show-wrapper">
