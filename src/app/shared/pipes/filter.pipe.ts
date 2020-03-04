@@ -1,38 +1,26 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'filter'
+  name: 'filterItems',
+  pure:false
 })
-export class FilterPipe implements PipeTransform {
+export class FilterItemsPipe implements PipeTransform {
 
   transform(items: any[], 
-    genders: string[],
-    species: string[]): any[] {
-      
-    if (!items || !genders ) {
-    return items;
-    }
-    
-    /*if (predicate == '>') {
-    // return items.filter(item => item[field] > value)
-    return items.filter(function(item: any):boolean {
-    return item[field] > value
-    })
-    }
-
-    if (predicate == '<') {
-    return items.filter(item => item[field] < value)
-    }
-
-    if (predicate == '==') {
-    return items.filter(item => item[field] == value)
-    }*/
-    if(genders){
-      items = items.filter(item => item['gender'].indexOf(genders) >-1);
-    }
-    if(species){
-      items = items.filter(item => item['species'].indexOf(species) >-1);
-    }
-    }
+    genders: string[],species: string[],origins:string[]): any {
+      if ( genders.length === 0  && species.length ===0 &&  origins.length ===0) {
+        return items;
+        }
+        if(genders){
+          items = items.filter(item => genders.indexOf(item['gender']) >-1);
+        }
+        if(species){
+          items = items.filter(item => species.indexOf(item['species']) >-1);
+        }
+        if(origins){
+          items = items.filter(item => origins.indexOf(item['origin']['name']) >-1);
+        }
+        return items;
+  }
 
 }

@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Show } from 'src/app/show/models/show';
 @Pipe({
-  name: 'mysearch'
+  name: 'search'
 })
-export class MySearchPipe implements PipeTransform {
+export class SearchPipe implements PipeTransform {
 
   transform(items: Show[],searchText:string): any {
     if(!searchText){

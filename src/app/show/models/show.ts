@@ -12,4 +12,5 @@ export class Show {
     episode:string[];
     url:string;
     created:string;
+    days:number;
 }

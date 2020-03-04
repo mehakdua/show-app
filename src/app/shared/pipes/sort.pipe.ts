@@ -17,7 +17,7 @@ actualItems:any[];
       return items;
     }
 
-    if (order === 'desc') {
+    if (order === 'asc') {
       return items.sort ( (left, right) => {
             if (left[fieldName] < right[fieldName])
               return -1;
@@ -26,7 +26,7 @@ actualItems:any[];
       })
     }
 
-    // asc
+    // desc
     return items.sort ( (left, right) => {
       if (left[fieldName] < right[fieldName])
         return 1;

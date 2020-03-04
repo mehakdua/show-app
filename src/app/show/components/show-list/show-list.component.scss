@@ -23,10 +23,11 @@ $lap:992px;
         .selected-filter{
             li{
                 display: inline-block;
-                padding: 5px;
-                margin: 5px;
+                padding: 10px;
+                margin: 10px;
                 background: gray;
                 color: white;
+                border-radius: 5px;
             }
         }
         .search-sort{
@@ -55,7 +56,6 @@ $lap:992px;
                 border-collapse: collapse;
                 padding: 10px;
                 margin: 5px;
-                background: grey;
                 color: white;
                 tr:first-child{
                     border: none;
@@ -73,8 +73,17 @@ $lap:992px;
                 } 
                 tr {
                     border-bottom: solid 1px white;
+                    background: #333333;
+                    height: 50px;
                     td {
                         padding: 15px;
+                        max-width: 0;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        h3{
+                            font-weight: 300;
+                        }
                     }
                     .value{
                         color:rgb(255, 174, 0);

@@ -40,12 +40,11 @@
             </div>
         </div>
         <div class="show-list">
-            <table  *ngFor="let show of shows|myfilter:gendersChecked:speciesChecked:originChecked|mysearch:searchText|sort:'id':selectedOrder">
+            <table  *ngFor="let show of shows|filterItems:gendersChecked:speciesChecked:originChecked|search:searchText|sort:'id':selectedOrder">
                 <tr>
                     <td class="character" colspan="2"><img src="{{show.image}}"/></td>
                 </tr>
-                <tr><td colspan="2"><h3>{{show.name}}</h3></td></tr>
-                <tr><td colspan="2">Id: {{show.id}}</td></tr>   
+                <tr rowspan="2"><td colspan="2"><h3>{{show.name}}</h3><span class="">Id: {{show.id}} - created {{show.days}} years ago</span></td></tr>
                 <tr>
                     <td>STATUS</td>
                     <td class="value">{{show.status}}</td>

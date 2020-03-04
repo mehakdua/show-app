@@ -21,16 +21,16 @@ export class ShowListComponent implements OnInit {
   speciesChecked: string[] = [];
   originChecked: string[] = [];
   filters:String[];
+  
   constructor(private showService: ShowService) {
 
   }
 
   ngOnInit(): void {
     this.showService.getData().subscribe((data) => {
-      console.log(data.results);
       this.shows = data.results;
+      this.shows.map(x => x.days = this.showService.getDays(x.created));
       this.genders = this.getData('gender');
-      console.log(this.genders);
       this.gendersChecked = [...this.genders];
       this.species = this.getData('species');
       this.speciesChecked = [...this.species];
