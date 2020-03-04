@@ -1,6 +1,6 @@
 <div class="parent-wrapper">
     <div class='filter-wrapper'>
-        Filters:
+        <h3>Filters</h3>
     <div class="filter">
         <h3>Species</h3>
         <div *ngFor="let s of species;let i=index" >
@@ -22,7 +22,7 @@
     </div>
     </div>
     <div class="show-wrapper">
-        Selected Filters:
+        <h3>Selected Filters:</h3>
         <ul class="selected-filter"><li  *ngFor="let f of filters;let i=index">{{f}} x</li></ul> 
         <div class="search-sort">
             <div class="search-box">
@@ -44,7 +44,7 @@
                 <tr>
                     <td class="character" colspan="2"><img src="{{show.image}}"/></td>
                 </tr>
-                <tr rowspan="2"><td colspan="2"><h3>{{show.name}}</h3><span class="">Id: {{show.id}} - created {{show.days}} years ago</span></td></tr>
+                <tr rowspan="2"><td colspan="2"><h3 class="char-heading">{{show.name}}</h3><span>Id: {{show.id}} - created {{show.days}} years ago</span></td></tr>
                 <tr>
                     <td>STATUS</td>
                     <td class="value">{{show.status}}</td>
